@@ -1,6 +1,7 @@
 ![Desktop Screenshot](https://mzdr.github.io/macos/screenshot.jpg)  
 
 # Installation
+<p align="right"><sup>Based on <a href="https://github.com/mzdr/macOS">mzdr/macOS</a></sup></p>
 
 Run the command below in your terminal and the installation will start *automatically*.
 
@@ -12,40 +13,15 @@ git clone https://github.com/mzdr/macOS.git ~/.macOS && ~/.macOS/install
 
 # What will I get?
 
-1. A super 🔥 **Terminal**…
+1. A ridiculously fast 🚓 💨 **web development** setup…
 
-    ![iTerm2 Screenshot](https://mzdr.github.io/macos/iTerm2.jpg)  
-
-    Which is [iTerm2] with
-
-    - [Z-Shell] \(zsh)
-    - [CamingoCode] \(13pt) as font
-    - Anonymice [Powerline] \(14pt) as non-ASCII font
-    - [Prezto] with [garrett prompt]
-    - [Seti] color scheme
-
-#  
-
-2. A ridiculously fast 🚓 💨 **web development** setup…
-
-    - [nginx]
     - [MySQL]
     - [PHP7]
+    - [Ruby on Rails]
 
-#  
+#   
 
-3. A nice stack of (coding optimized 👀) **fonts**…
-
-    - [FiraCode]
-    - [CamingoCode]
-    - [Anonymous Pro]
-    - [Inconsolata]
-
-    <sub>See [`.stack/fonts`](.stack/fonts) for the full list of fonts that will be installed. Adjust it to your personal taste.</sub>
-
-#  
-
-4. 💪 **[Atom]** as the default text editor and a couple of *superb* packages for…
+2. 💪 **[Atom]** as the default text editor and a couple of *superb* packages for…
 
     <p align="center">
         <img src="https://mzdr.github.io/macos/atom.jpg" alt="Screenshot of Atom">
@@ -64,7 +40,7 @@ git clone https://github.com/mzdr/macOS.git ~/.macOS && ~/.macOS/install
 
 #  
 
-5. A set of (my) relevant 🍧 **desktop apps**…
+3. A set of (my) relevant 🍧 **desktop apps**…
 
     - [Google Chrome]
     - [Firefox]
@@ -83,7 +59,7 @@ git clone https://github.com/mzdr/macOS.git ~/.macOS && ~/.macOS/install
 
 #  
 
-6. A set of useful 🍻 **browser extensions**…
+4. A set of useful 🍻 **browser extensions**…
 
     - [Ghostery]
     - [HTTPS Everywhere]
@@ -97,14 +73,6 @@ git clone https://github.com/mzdr/macOS.git ~/.macOS && ~/.macOS/install
     <a href="https://sebastianprein.com/">sebastianprein.com</a> ・
     <a href="https://twitter.com/_mzdr">@_mzdr</a>
 </p>
-
-<!-- Terminal -->
-[Z-Shell]: http://www.zsh.org/
-[iTerm2]: https://github.com/gnachman/iTerm2
-[Prezto]: https://github.com/sorin-ionescu/prezto
-[garrett prompt]: https://github.com/chauncey-garrett/zsh-prompt-garrett
-[Seti]: https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/schemes
-[Powerline]: https://github.com/powerline/fonts
 
 <!-- Desktop apps -->
 [Google Chrome]: https://www.google.de/chrome/
@@ -123,16 +91,9 @@ git clone https://github.com/mzdr/macOS.git ~/.macOS && ~/.macOS/install
 [Atom]: https://atom.io
 
 <!-- Web development -->
-[nginx]: https://nginx.org/
 [MySQL]: https://www.mysql.com/
 [PHP7]: https://secure.php.net/
-
-<!-- Fonts -->
-[FiraCode]: https://github.com/tonsky/FiraCode
-[CamingoCode]: http://www.janfromm.de/typefaces/camingomono/camingocode/
-[Anonymous Pro]: http://www.marksimonson.com/fonts/view/anonymous-pro
-[Inconsolata]: http://levien.com/type/myfonts/inconsolata.html
-
+[Ruby on Rails]: https://rubyonrails.org
 
 <!-- Atom packages -->
 [Blame]: https://atom.io/packages/blame

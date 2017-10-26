@@ -15,16 +15,15 @@
       ".hg"
       ".svn"
       ".DS_Store"
-      "._*"
       "Thumbs.db"
       "desktop.ini"
       "node_modules"
     ]
-    projectHome: "~/Sites"
+    projectHome: "~/Documents/WWW"
     telemetryConsent: "no"
     themes: [
-      "one-dark-ui"
-      "chester-atom-syntax"
+      "atom-material-syntax"
+      "atom-material-ui"
     ]
     titleBar: "custom-inset"
   docblockr:
@@ -34,7 +33,7 @@
     ]
     lower_case_primitives: true
   editor:
-    fontFamily: "Fira Code"
+    fontFamily: ""
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
@@ -54,7 +53,7 @@
       enableStatusBarIcon: false
       showFormat: "fuller"
   "git-projects":
-    rootPath: "~/Sites"
+    rootPath: "~/Documents/WWW"
     sortBy: "Latest modification date"
   "linter-ui-default":
     showPanel: true
