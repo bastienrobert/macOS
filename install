@@ -63,6 +63,7 @@ chapter "Adjusting general settings"
 
 step "Setting your computer name (as done via System Preferences → Sharing)."
 echo -ne "  What would you like it to be? $bold"
+echo "Advice : name it as you'll name on GitHub, like MacBook-Pro-de-Bastien"
 read computer_name
 echo -e "$reset"
 run sudo scutil --set ComputerName "'$computer_name'"
@@ -83,7 +84,7 @@ case $(read choice; echo $choice) in
         ;;
 esac
 
-step "Disable the “Are you sure you want to open this application?” dialog? [Y/n]: " ""
+step "Disable the “Are you sure you want to open this application?” dialog? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -110,7 +111,7 @@ esac
 
 chapter "Adjusting input device settings"
 
-step "Enable tap to click for this user and for the login screen? [Y/n]: " ""
+step "Enable tap to click for this user and for the login screen? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -124,7 +125,7 @@ case $(read choice; echo $choice) in
 esac
 
 step "Enable full keyboard access for all controls?"
-echo -n "  (e.g. enable Tab in modal dialogs) [Y/n]: "
+echo -n "  (e.g. enable Tab in modal dialogs) [y/N]: "
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -135,19 +136,7 @@ case $(read choice; echo $choice) in
         ;;
 esac
 
-step "Use scroll gesture with the Ctrl (^) modifier key to zoom? [Y/n]: " ""
-case $(read choice; echo $choice) in
-    [nN] )
-        echo ""
-        ;;
-    [yY] | * )
-        echo ""
-        run defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-        run defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
-        ;;
-esac
-
-step "Disable press-and-hold for keys in favor of key repeat? [Y/n]: " ""
+step "Disable press-and-hold for keys in favor of key repeat? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -165,12 +154,12 @@ case $(read choice; echo $choice) in
         ;;
     [yY] | * )
         echo ""
-        run defaults write NSGlobalDomain KeyRepeat -int 1
-        run defaults write NSGlobalDomain InitialKeyRepeat -int 10
+        run defaults write NSGlobalDomain KeyRepeat -int 2
+        run defaults write NSGlobalDomain InitialKeyRepeat -int 15
         ;;
 esac
 
-step "Disable auto-correct? [Y/n]: " ""
+step "Disable auto-correct? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -194,7 +183,7 @@ esac
 
 chapter "Adjusting screen settings"
 
-step "Disable shadow in screenshots? [Y/n]: " ""
+step "Disable shadow in screenshots? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -207,7 +196,7 @@ esac
 
 chapter "Adjusting Finder settings"
 
-step "Set Downloads as the default location for new Finder windows? [Y/n]: " ""
+step "Set ${id -un} folder as the default location for new Finder windows? [Y/n]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -215,7 +204,7 @@ case $(read choice; echo $choice) in
     [yY] | * )
         echo ""
         run defaults write com.apple.finder NewWindowTarget -string '"PfLo"'
-        run defaults write com.apple.finder NewWindowTargetPath -string "'file://${HOME}/Downloads/'"
+        run defaults write com.apple.finder NewWindowTargetPath -string "'file://${HOME}/${id -un}/'"
         ;;
 esac
 
@@ -227,7 +216,7 @@ case $(read choice; echo $choice) in
     [yY] | * )
         echo ""
         run defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-        run defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+        run defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
         run defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
         run defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
         ;;
@@ -255,7 +244,7 @@ case $(read choice; echo $choice) in
         ;;
 esac
 
-step "Disable the warning when changing a file extension? [Y/n]: " ""
+step "Disable the warning when changing a file extension? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -266,14 +255,14 @@ case $(read choice; echo $choice) in
         ;;
 esac
 
-step "Use list view in all Finder windows by default? [Y/n]: " ""
+step "Use icons view in all Finder windows by default? [Y/n]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
         ;;
     [yY] | * )
         echo ""
-        run defaults write com.apple.finder FXPreferredViewStyle -string '"Nlsv"'
+        run defaults write com.apple.finder FXPreferredViewStyle -string '"icnv"'
         ;;
 esac
 
@@ -320,11 +309,23 @@ case $tilesize in
         ;;
     * )
         echo ""
-        run defaults write com.apple.dock tilesize -int ${tilesize:-48}
+        run defaults write com.apple.dock tilesize -int ${tilesize:-65}
         ;;
 esac
 
-step "Automatically hide and show the Dock? [Y/n]: " ""
+step "Disable the damn dashboard? [Y/n]: " ""
+case $(read choice; echo $choice) in
+    [nN] )
+        echo ""
+        ;;
+    [yY] | * )
+        echo ""
+        run defaults write com.apple.dashboard mcx-disabled -boolean YES
+        run killall Dock
+        ;;
+esac
+
+step "Automatically hide and show the Dock? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -335,7 +336,7 @@ case $(read choice; echo $choice) in
         ;;
 esac
 
-step "Make Dock icons of hidden applications translucent? [Y/n]: " ""
+step "Make Dock icons of hidden applications translucent? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -348,7 +349,7 @@ esac
 
 chapter "Adjusting Mac App Store settings"
 
-step "Enable the automatic update check? [Y/n]: " ""
+step "Enable the automatic update check? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -359,7 +360,7 @@ case $(read choice; echo $choice) in
         ;;
 esac
 
-step "Check for software updates daily, not just once per week? [Y/n]: " ""
+step "Check for software updates daily, not just once per week? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -370,7 +371,7 @@ case $(read choice; echo $choice) in
         ;;
 esac
 
-step "Download newly available updates in background? [Y/n]: " ""
+step "Download newly available updates in background? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -381,7 +382,7 @@ case $(read choice; echo $choice) in
         ;;
 esac
 
-step "Install System data files & security updates? [Y/n]: " ""
+step "Install System data files & security updates? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -392,7 +393,7 @@ case $(read choice; echo $choice) in
         ;;
 esac
 
-step "Turn on app auto-update? [Y/n]: " ""
+step "Turn on app auto-update? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -426,7 +427,7 @@ step "Ruby install with RVM\n"
 run gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 run curl -sSL https://get.rvm.io | bash -s stable --ruby
 run rvm rubies
-run rvm use 2.3.1
+run rvm use 2.4.2
 run ruby -v
 run gem env
 
@@ -451,19 +452,6 @@ for package in $(<$cwd/.stack/atom); do
     fi
 done
 
-step "Prezto\n"
-
-if [ ! -d ~/.zprezto ]; then
-    run git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
-else
-    run '(cd ~/.zprezto && git pull && git submodule update --init --recursive)'
-fi
-
-for rcfile in `find ~/.zprezto/runcoms ! -name "*.md" -type f`
-do
-  run ln -sfv $rcfile ~/.$(basename $rcfile)
-done
-
 chapter "Restoring…"
 
 step "Dotfiles\n"
@@ -474,7 +462,6 @@ run mkdir -pv ~/.atom
 run ln -sfv $cwd/.atom/config.cson ~/.atom
 run ln -sfv $cwd/.atom/keymap.cson ~/.atom
 run ln -sfv $cwd/.atom/snippets.cson ~/.atom
-run ln -sfv $cwd/.atom/toolbar.cson ~/.atom
 run ln -sfv $cwd/.atom/styles.less ~/.atom
 
 step "VLC preferences\n"

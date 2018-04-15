@@ -4,7 +4,6 @@ graphviz
 heroku
 htop
 imagemagick
-mas
 node
 gnupg
 rbenv
@@ -12,3 +11,6 @@ python
 redis
 sqlite
 tmate
+postgresql
+mongodb
+mariadb

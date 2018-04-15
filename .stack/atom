@@ -1,7 +1,11 @@
+atom-material-syntax
+atom-material-ui
+atom-beautify
+editorconfig
 emmet
 file-icons
 language-ejs
-language-liquid
+language-stylus
 language-vue
 no-dock-arrows
 php-twig
