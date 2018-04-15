@@ -6,7 +6,6 @@ htop
 imagemagick
 node
 gnupg
-rbenv
 python
 redis
 sqlite
