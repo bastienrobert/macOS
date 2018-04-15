@@ -1,4 +1,4 @@
-![Desktop Screenshot](https://mzdr.github.io/macos/screenshot.jpg)  
+![Desktop Screenshot](wallpaper.jpg)  
 
 # Installation
 <p align="right"><sup>Based on <a href="https://github.com/mzdr/macOS">mzdr/macOS</a></sup></p>
@@ -8,7 +8,7 @@ Run the command below in your terminal and the installation will start *automati
 Just follow the prompts and you’ll be fine. 👌
 
 ```shell
-git clone https://github.com/mzdr/macOS.git ~/.macOS && ~/.macOS/install
+git clone https://github.com/bastienrobert/macOS.git ~/.macOS && ~/.macOS/install
 ```
 
 **Wallpaper:** thanks to [Ueno](http://ueno.co/).
@@ -19,7 +19,7 @@ git clone https://github.com/mzdr/macOS.git ~/.macOS && ~/.macOS/install
 
     - [MariaDB]
     - [MongoDB]
-    - [Postgres]
+    - [Postgresql]
     - [PHP7]
     - [Ruby on Rails]
 
@@ -28,7 +28,7 @@ git clone https://github.com/mzdr/macOS.git ~/.macOS && ~/.macOS/install
 2. 💪 **[Atom]** as the default text editor and a couple of *superb* packages for…
 
     <p align="center">
-        <img src="https://mzdr.github.io/macos/atom.jpg" alt="Screenshot of Atom">
+        <img src="atom.jpg" alt="Screenshot of Atom">
         <sub>👆 <a href="https://atom.io/themes/atom-material-ui">Atom Material UI</a> with <a href="https://atom.io/themes/atom-material-syntax">Atom Material Synthax</a>.</sub>
     </p>
 
@@ -81,7 +81,7 @@ git clone https://github.com/mzdr/macOS.git ~/.macOS && ~/.macOS/install
 <!-- Web development -->
 [MariaDB]: https://mariadb.org/
 [MongoDB]: https://mongodb.com/
-[PostGreSQL]: https://www.postgresql.org/
+[Postgresql]: https://www.postgresql.org/
 [PHP7]: https://secure.php.net/
 [Ruby on Rails]: https://rubyonrails.org
 
