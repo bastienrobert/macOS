@@ -196,18 +196,6 @@ esac
 
 chapter "Adjusting Finder settings"
 
-step "Set ${id -un} folder as the default location for new Finder windows? [Y/n]: " ""
-case $(read choice; echo $choice) in
-    [nN] )
-        echo ""
-        ;;
-    [yY] | * )
-        echo ""
-        run defaults write com.apple.finder NewWindowTarget -string '"PfLo"'
-        run defaults write com.apple.finder NewWindowTargetPath -string "'file://${HOME}/${id -un}/'"
-        ;;
-esac
-
 step "Show icons for hard drives, servers, and removable media on the desktop? [Y/n]: " ""
 case $(read choice; echo $choice) in
     [nN] )
