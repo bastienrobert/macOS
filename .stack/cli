@@ -1,7 +1,6 @@
 git
 elasticsearch
 graphviz
-heroku
 htop
 imagemagick
 node
@@ -9,7 +8,5 @@ gnupg
 python
 redis
 sqlite
-tmate
 postgresql
-mongodb
 mariadb

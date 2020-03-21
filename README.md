@@ -1,9 +1,8 @@
-![Desktop Screenshot](wallpaper.jpg)  
-
 # Installation
+
 <p align="right"><sup>Based on <a href="https://github.com/mzdr/macOS">mzdr/macOS</a></sup></p>
 
-Run the command below in your terminal and the installation will start *automatically*.
+Run the command below in your terminal and the installation will start _automatically_.
 
 Just follow the prompts and you’ll be fine. 👌
 
@@ -11,57 +10,35 @@ Just follow the prompts and you’ll be fine. 👌
 git clone https://github.com/bastienrobert/macOS.git ~/.macOS && ~/.macOS/install
 ```
 
-**Wallpaper:** thanks to [Ueno](http://ueno.co/).
-
 # What will I get?
 
 1. A ridiculously fast 🚓 💨 **web development** setup…
 
-    - [MariaDB]
-    - [MongoDB]
-    - [Postgresql]
-    - [PHP7]
-    - [Ruby on Rails]
+   - [mariadb]
+   - [mongodb]
+   - [postgresql]
+   - [php7]
+   - [ruby on rails]
 
-#   
+#
 
-2. 💪 **[Atom]** as the default text editor and a couple of *superb* packages for…
+2. 💪 **[VS Code]** as the default text editor
 
-    <p align="center">
-        <img src="atom.jpg" alt="Screenshot of Atom">
-        <sub>👆 <a href="https://atom.io/themes/atom-material-ui">Atom Material UI</a> with <a href="https://atom.io/themes/atom-material-syntax">Atom Material Synthax</a>.</sub>
-    </p>
-
-    - [atom-material-syntax]
-    - [atom-material-ui]
-    - [atom-beautify]
-    - [editorconfig]
-    - [emmet]
-    - [file-icons]
-    - [language-ejs]
-    - [language-stylus]
-    - [language-vue]
-    - [no-dock-arrows]
-    - [php-twig]
-
-
-    <sub>See [`.stack/atom`](.stack/atom) for the full list of atom package that will be installed. Adjust it to your personal taste.</sub>
-
-#  
+#
 
 3. A set of (my) relevant 🍧 **desktop apps**…
 
-    - [Google Chrome]
-    - [Firefox]
-    - [Atom]
-    - [Slack]
-    - [Dropbox]
-    - [Spectacle app]
-    - [VLC]
+   - [google chrome]
+   - [firefox]
+   - [slack]
+   - [dropbox]
+   - [spectacle app]
+   - [vs code]
+   - [vlc]
 
-    <sub>See [`.stack/desktop`](.stack/desktop) for the full list of desktop app that will be installed. Adjust it to your personal taste.</sub>
+   <sub>See [`.stack/desktop`](.stack/desktop) for the full list of desktop app that will be installed. Adjust it to your personal taste.</sub>
 
-#  
+#
 
 <p align="center">
     <a href="https://bastienrobert.fr/">bastienrobert.fr</a> ・
@@ -70,30 +47,19 @@ git clone https://github.com/bastienrobert/macOS.git ~/.macOS && ~/.macOS/instal
 </p>
 
 <!-- Desktop apps -->
-[Google Chrome]: https://www.google.de/chrome/
-[Firefox]: https://www.mozilla.org/de/firefox/
-[Slack]: https://slack.com/
-[Dropbox]: https://www.dropbox.com/downloading
-[Spectacle app]: https://www.spectacleapp.com/
-[VLC]: https://www.videolan.org/vlc/
-[Atom]: https://atom.io
+
+[google chrome]: https://www.google.de/chrome/
+[firefox]: https://www.mozilla.org/de/firefox/
+[slack]: https://slack.com/
+[dropbox]: https://www.dropbox.com/downloading
+[spectacle app]: https://www.spectacleapp.com/
+[vs code]: https://code.visualstudio.com/
+[vlc]: https://www.videolan.org/vlc/
 
 <!-- Web development -->
-[MariaDB]: https://mariadb.org/
-[MongoDB]: https://mongodb.com/
-[Postgresql]: https://www.postgresql.org/
-[PHP7]: https://secure.php.net/
-[Ruby on Rails]: https://rubyonrails.org
 
-<!-- Atom packages -->
-[atom-material-syntax]: https://atom.io/themes/atom-material-syntax
-[atom-material-ui]: https://atom.io/themes/atom-material-ui
-[atom-beautify]: https://atom.io/packages/atom-beautify
-[editorconfig]: https://atom.io/packages/editorconfig
-[emmet]: https://atom.io/packages/emmet
-[file-icons]: https://atom.io/packages/file-icons
-[language-ejs]: https://atom.io/packages/language-ejs
-[language-stylus]: https://atom.io/packages/language-stylus
-[language-vue]: https://atom.io/packages/language-vue
-[no-dock-arrows]: https://atom.io/packages/no-dock-arrows
-[php-twig]: https://atom.io/packages/php-twig
+[mariadb]: https://mariadb.org/
+[mongodb]: https://mongodb.com/
+[postgresql]: https://www.postgresql.org/
+[php7]: https://secure.php.net/
+[ruby on rails]: https://rubyonrails.org

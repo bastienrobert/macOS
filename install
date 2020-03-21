@@ -71,6 +71,17 @@ run sudo scutil --set HostName "'$computer_name'"
 run sudo scutil --set LocalHostName "'$computer_name'"
 run sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "'$computer_name'"
 
+step "Disable mouse scaling? [Y/n]: " ""
+case $(read choice; echo $choice) in
+    [nN] )
+        echo ""
+        ;;
+    [yY] | * )
+        echo ""
+        defaults write .GlobalPreferences com.apple.mouse.scaling -1
+        ;;
+esac
+
 step "Disable OS X Gate Keeper?"
 echo -n "  (You’ll be able to install any app you want from here on, not just Mac App Store apps) [Y/n]: "
 case $(read choice; echo $choice) in
@@ -98,7 +109,7 @@ esac
 chapter "Adjusting HDD/SSD specific settings"
 
 step "Disable the sudden motion sensor?"
-echo -n "  (It’s not useful for SSDs) [Y/n]: "
+echo -n "  (It’s not useful for SSDs) [y/N]: "
 case $(read choice; echo $choice) in
     [nN] )
         echo ""
@@ -195,6 +206,17 @@ case $(read choice; echo $choice) in
 esac
 
 chapter "Adjusting Finder settings"
+
+step "Create Developer folder? [Y/n]: " ""
+case $(read choice; echo $choice) in
+    [nN] )
+        echo ""
+        ;;
+    [yY] | * )
+        echo ""
+        run mkdir ~/Developer
+        ;;
+esac
 
 step "Show icons for hard drives, servers, and removable media on the desktop? [Y/n]: " ""
 case $(read choice; echo $choice) in
@@ -324,6 +346,17 @@ case $(read choice; echo $choice) in
         ;;
 esac
 
+step "Show recent applications in the dock? [y/N]: " ""
+case $(read choice; echo $choice) in
+    [nN] )
+        echo ""
+        run defaults write com.apple.dock show-recents -bool FALSE
+        ;;
+    [yY] | * )
+        echo ""
+        ;;
+esac
+
 step "Make Dock icons of hidden applications translucent? [y/N]: " ""
 case $(read choice; echo $choice) in
     [nN] )
@@ -432,25 +465,10 @@ for app in $(<$cwd/.stack/desktop); do
     fi
 done
 
-step "Atom packages/themes\n"
-
-for package in $(<$cwd/.stack/atom); do
-    if [ ! -d ~/.atom/packages/$package ]; then
-        run apm install $package
-    fi
-done
-
 chapter "Restoring…"
 
 step "Dotfiles\n"
 run ln -sfv $cwd/.gitconfig ~
-
-step "Atom preferences\n"
-run mkdir -pv ~/.atom
-run ln -sfv $cwd/.atom/config.cson ~/.atom
-run ln -sfv $cwd/.atom/keymap.cson ~/.atom
-run ln -sfv $cwd/.atom/snippets.cson ~/.atom
-run ln -sfv $cwd/.atom/styles.less ~/.atom
 
 step "VLC preferences\n"
 run ln -sfv $cwd/org.videolan.vlc ~/Library/Preferences
